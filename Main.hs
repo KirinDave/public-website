@@ -20,7 +20,7 @@ main = hakyll $ do
         route   $ setExtension ".html"
         compile $ pageCompiler
             >>> applyTemplateCompiler "templates/post.html"
-            >>> applyTemplateCompiler "templates/default.html"
+            >>> applyTemplateCompiler "templates/toplevel.html"
             >>> relativizeUrlsCompiler
 
     -- Render posts list
@@ -29,7 +29,7 @@ main = hakyll $ do
         >>> arr (setField "title" "All posts")
         >>> requireAllA "posts/*" addPostList2
         >>> applyTemplateCompiler "templates/posts.html"
-        >>> applyTemplateCompiler "templates/default.html"
+        >>> applyTemplateCompiler "templates/toplevel.html"
         >>> relativizeUrlsCompiler
 
     -- Index
@@ -38,7 +38,7 @@ main = hakyll $ do
         >>> arr (setField "title" "Home")
         >>> requireAllA "posts/*" (id *** arr (take 3 . recentFirst) >>> addPostList2)
         >>> applyTemplateCompiler "templates/index.html"
-        >>> applyTemplateCompiler "templates/default.html"
+        >>> applyTemplateCompiler "templates/toplevel.html"
         >>> relativizeUrlsCompiler
 
     -- Read templates
