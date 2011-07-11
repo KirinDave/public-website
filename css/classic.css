@@ -1,0 +1,46 @@
+body {
+   font-family: serif;
+   margin: 0% 10% 0% 10%;
+}
+
+header {
+   border-bottom: 2px double grey;
+}
+
+header h1.toplevel  { 
+ font-family: 'Goudy Bookletter 1911', serif;
+ font-size: 24pt;
+ font-weight: bold;
+ text-align: center;   
+}
+
+header h1.toplevel > span {
+   font-size: 18pt;
+   font-variant: small-caps;
+}
+
+nav {
+   border-bottom: 2px double grey;
+}
+
+nav > ul {
+   list-style: none;
+   width: 100%;
+   display: block;
+   text-align: center;
+}
+
+nav > ul li {
+   display: inline;
+   font-variant: small-caps;
+}
+
+nav > ul:not(:first-child) { background-color: purple; border-left: thin solid red; }
+
+section {
+}
+
+h2 {
+   font-family: 'Goudy Bookletter 1911', serif;
+   font-size: 18pt;
+}
