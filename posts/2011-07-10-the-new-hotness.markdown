@@ -27,4 +27,4 @@ the site as I get more comfortbale with Yesod and Hakyll. In the
 meantime:
 
 <img src="/img/under_construction_animated.gif" style="margin-left:
-auto; margin-right: auto; display: block; width: 50%">
+auto; margin-right: auto; display: block; width: 33%">
