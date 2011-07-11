@@ -9,9 +9,10 @@ As I cruised through my morning news, I came across a contentious article by Viv
 
 Vivek puts forth a number of arguments in his article. Specifically:
 
-Minimalism is about superficial signals and unconsumption as a doctrine.
-Great thinkers of the Renaissance era were the antithesis of minimalism (so clearly it does not work)
-Minimalism cuts down on experience and diversity, which creative professionals require to be successful.
+1. Minimalism is about superficial signals and unconsumption as a doctrine.
+2. Great thinkers of the Renaissance era were the antithesis of minimalism (so clearly it does not work)
+3. Minimalism cuts down on experience and diversity, which creative professionals require to be successful.
+
 As far as I can tell, Vivek fundamentally mistakes the goal of the Minimalism movement. He says the goal is to create an army of smug jerks “sitting in a bare room with a desk upon which sits only a MacBook Air, his backpack of possessions on one side, the broadband internet cable available but unplugged, fingers ready to type into the empty white screen of a minimalist editor.” But that is not the goal. In fact, he’s actually identified what minimalism is striving against.
 
 So then, what is the Minimalist movement—before all the corruption from hangers on and marketers corrupts it—really about? At its core, Minimalism is about being aware that every decision you make is a value proposition, and that you need to judge how the consequences fit with your goals. Most commonly this reflects on one’s possessions; acquisition is not without cost. Corollary to this is time management: minimalists tend to be very deliberate in how they spend their time.
