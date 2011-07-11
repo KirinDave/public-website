@@ -2,6 +2,7 @@
 title: Minimalism Is A Viable Long Term Strategy
 author: Dave Fayram
 tags: cross-post, minimalism, lifestyle
+date: December 10, 2010
 ---
 
 As I cruised through my morning news, I came across a contentious article by Vivek Haldar, [“Minimalism Is Not A Long Term Viable Intellectual Strategy.”](http://vivekhaldar.tumblr.com/post/2525332092/minimalism-is-not-a-viable-intellectual-strategy) In it, he argues that Minimalism is not only a silly and smug movement, but that it’s ultimately self defeating. I’d like to provide a counterpoint to this: Minimalism, at its core, is the process of prioritizing your life and working towards concrete goals without giving in to distraction.
