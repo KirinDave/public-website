@@ -14,14 +14,22 @@ main = hakyll $ do
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
+    
+    match "media/*" $ do
+      route   idRoute
+      compile copyFileCompiler
+    
+    match "images/*" $ do
+      route   (gsubRoute "images/" (const "img/"))
+      compile copyFileCompiler
 
     -- Render posts
     match "posts/*" $ do
         route   $ setExtension ".html"
         compile $ pageCompiler
-            >>> applyTemplateCompiler "templates/post.html"
-            >>> applyTemplateCompiler "templates/toplevel.html"
-            >>> relativizeUrlsCompiler
+          >>> applyTemplateCompiler "templates/post.html"
+          >>> applyTemplateCompiler "templates/toplevel.html"
+          >>> relativizeUrlsCompiler
 
     -- Render posts list
     match "posts.html" $ route idRoute
@@ -35,7 +43,7 @@ main = hakyll $ do
     -- Index
     match "index.html" $ route idRoute
     create "index.html" $ constA mempty
-        >>> arr (setField "title" "Home")
+        >>> arr (setField "title" "<span>Case Study:</span><br>An Opinionated Man")
         >>> requireAllA "posts/*" (id *** arr (take 3 . recentFirst) >>> addPostList2)
         >>> applyTemplateCompiler "templates/index.html"
         >>> applyTemplateCompiler "templates/toplevel.html"

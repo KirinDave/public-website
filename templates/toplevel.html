@@ -11,7 +11,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>$title$</title>
+  <title>An Opinionated Man</title>
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -24,8 +24,8 @@
 
 
   <!-- CSS: implied media="all" -->
-  <link rel="stylesheet" href="css/style.css?v=2">
-  <link rel="stylesheet" href="css/classic.css">
+  <link rel="stylesheet" href="/css/style.css?v=2">
+  <link rel="stylesheet" href="/css/classic.css">
 
   <!-- Uncomment if you are specifically targeting less enabled mobile browsers
   <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
@@ -42,22 +42,17 @@
   
   <div id="container">
     <header>
-      <h1 class="toplevel"><span>Case Study:</span><br>An Opinionated Man</h1>
+      <h1 class="toplevel">$title$</h1>
     </header>
     <nav>
       <ul>
-        <li> <a href="resume.html">Resume</a>
-        <li> <a href="posts.html">All Posts</a>
-        <li> <a href="works.html">Productions</a>
-        <li> <a href="contact.html">Contact</a>
+        <li> <a href="/media/resume-2011.pdf">Resumé</a>
+        <li> <a href="/posts.html">All Posts</a>
+        <li> <a href="/index.html#productions">Productions</a>
       </ul>
     </nav>
 
-    <div id="main" role="main"></div>
     $body$
-    <footer>
-      
-    </footer>
   </div> <!--! end of #container -->
 
 
@@ -74,19 +69,13 @@
   <!-- end scripts-->
 
 
+
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>
     <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
   <![endif]-->
-
-
-  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-    s.parentNode.insertBefore(g,s)}(document,"script"));
-  </script>
-
+<footer>
+  &copy; Copyright 2010-2011 Dave Fayram (for all the good that will do)
+</footer>
 </body>
 </html>

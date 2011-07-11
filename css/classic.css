@@ -38,9 +38,62 @@ nav > ul li {
 nav > ul:not(:first-child) { background-color: purple; border-left: thin solid red; }
 
 section {
+   margin-top: 1em;
+   display: block
+   clear: both;
 }
 
 h2 {
    font-family: 'Goudy Bookletter 1911', serif;
-   font-size: 18pt;
+   font-size: 16pt;
+}
+
+.portrait {
+   width: 33%
+}
+
+.about { 
+  position: relative;
+}
+
+.about > div.content {
+   margin: 0.5em;
+   position: absolute;
+   left: 35%;
+   top: 0;
+   
+}
+
+footer {
+   text-align: center;
+   color: rgb(200,200,200);
+   margin-top: 3em;
+   margin-bottom: 0.75em;
+   font-size: 8pt;
+}
+
+section.post {
+   position: relative;
+   display: block;
+   padding: 0.1em;
+}
+
+section.post > .byline {
+   position: absolute;
+   right: 0%;
+   height: 2em;
+}
+
+section.post > div.content {
+   margin-top: 3em;
+}
+
+section.post blockquote {
+   margin: 2em;
+   padding: 1em;
+   background-color: rgb(240,240,240);
+}
+
+section.post > div.content > p {
+   margin-top: 1em;
 }
