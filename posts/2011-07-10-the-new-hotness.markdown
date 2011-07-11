@@ -18,4 +18,13 @@ hyperactive setting to read and understand.
 (Oh, and also: editing tumblr styles is a huge pain in the ass.)
 
 Right now I'm using [Hakyll](http://jaspervdj.be/hakyll/) to publish
-this. I'm going to keep it up on 
+this. I'm going to keep it up on
+[Github](https://github.com/KirinDave/public-website), but publish to
+a S3 bucket. 
+
+I'll continue to incrementally refine the style and capabilities of
+the site as I get more comfortbale with Yesod and Hakyll. In the
+meantime:
+
+<img src="/img/under_construction_animated.gif" style="margin-left:
+auto; margin-right: auto; display: block; width: 50%">
