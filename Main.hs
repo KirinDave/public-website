@@ -17,7 +17,6 @@ feedConfig = FeedConfiguration { feedTitle       = "dave's blog"
 main :: IO ()
 main = hakyll $ do
 
-
     -- Render posts
     match "posts/*" $ do
         route   $ setExtension ".html"
@@ -28,18 +27,20 @@ main = hakyll $ do
           >>> relativizeUrlsCompiler
 
     -- Render posts list
-    match "posts.html" $ route idRoute
-    create "posts.html" $ constA mempty
-      >>> setTitle "All posts"
-      >>> makeEnvironment
-      >>> requireAllA "posts/*" addPostList
-      >>> applyTemplateCompiler "templates/posts.html"
-      >>> applyTemplateCompiler "templates/toplevel.html"
-      >>> relativizeUrlsCompiler
+    match "posts.html" $ do 
+      route idRoute
+      create "posts.html" $ constA mempty
+        >>> setTitle "All posts"
+        >>> makeEnvironment
+        >>> requireAllA "posts/*" addPostList
+        >>> applyTemplateCompiler "templates/posts.html"
+        >>> applyTemplateCompiler "templates/toplevel.html"
+        >>> relativizeUrlsCompiler
 
     -- Index
-    match "index.html" $ route idRoute
-    create "index.html" $ constA mempty
+    match "index.html" $ do
+      route idRoute
+      create "index.html" $ constA mempty
         >>> setTitle topTitle
         >>> makeEnvironment
         >>> requireAllA "posts/*" (second (arr $ take 3 . recentFirst) >>> addPostList)
@@ -56,16 +57,19 @@ main = hakyll $ do
     -- Read templates
     match "templates/*" $ compile templateCompiler
     
+    -- Render and compress css
     match "css/*" $ do
       route   idRoute
       compile compressCssCompiler
     
+    -- Stage media
     match "media/*" $ do
       route   idRoute
       compile copyFileCompiler
     
+    -- Stage images, make sure to truncate from pretty names.
     match "images/*" $ do
-      route   (gsubRoute "images/" (const "img/"))
+      route $ gsubRoute "images/" (const "img/")
       compile copyFileCompiler
 
         
