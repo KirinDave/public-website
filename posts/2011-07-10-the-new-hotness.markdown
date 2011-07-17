@@ -2,6 +2,7 @@
 title: Welcome To The New Hotness
 author: Dave Fayram
 date: April 6, 2011
+description: Introducing a new blog to ignore.
 ---
 
 So, this is my new blog. It's a fair question to ask me, "Why another

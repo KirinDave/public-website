@@ -1,8 +1,9 @@
 ---
-title: Multicore Hardware &<br>The Future of Ruby
+title: Multicore Hardware &<br> The Future of Ruby
 date: June 7, 2007
 author: Dave Fayram
 tags: ruby, multicore, programming, cross-post
+description: An argument that Rails needs to take multicore and resource sharing very seriously. It was unheeded.
 ---
 
 > This was originally posted on the [Oreilly blog](http://www.oreillynet.com/ruby/blog/2007/06/multicore_hardware_and_the_fut.html). It has been reposted here for archival.

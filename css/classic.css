@@ -35,8 +35,6 @@ nav > ul li {
    font-variant: small-caps;
 }
 
-nav > ul:not(:first-child) { background-color: purple; border-left: thin solid red; }
-
 section {
    margin-top: 1em;
    display: block
@@ -96,4 +94,17 @@ section.post blockquote {
 
 section.post > div.content > p {
    margin-top: 1em;
+}
+
+.attributions {
+   margin-top: 2em;
+   margin-left: auto;
+   margin-right: auto;
+   color: grey;
+   font-size: 9pt;
+}
+
+.attributions a {
+   text-decoration: none;
+   color: grey;
 }

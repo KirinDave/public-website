@@ -3,6 +3,7 @@ title: The Opposite Of Momentum
 date: November 20, 2008
 author: Dave Fayram
 tags: ruby, multicore, programming, cross-post
+description: My thoughts on the future of ruby circa 2008.
 ---
 
 Let me start by saying that I’ve been a longtime fan of Ruby. I’ve been a member of the #caboose cabal forever, and I’ve written hundreds of thousands of lines of ruby over the course the last 6 years. I’ve drank the Ruby kool-aid, helped to start two [Rails](http://ma.gnolia.com/) [Startups](http://mog.com/) and integrated a lot of code into Ruby. I fought tooth and nail to get Lockheed Martin to include Ruby deliverables in their RSA2 standardization project (didn’t you know? Ruby helps launch rockets!)
