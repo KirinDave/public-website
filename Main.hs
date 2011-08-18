@@ -5,6 +5,7 @@ import Prelude hiding (id)
 import Control.Category (id)
 import Control.Arrow ((>>>), (***), arr, second)
 import Data.Monoid (mempty, mconcat)
+import Data.Maybe (fromMaybe)
 
 import Hakyll
 
@@ -49,11 +50,12 @@ main = hakyll $ do
         >>> relativizeUrlsCompiler
 
     -- Feed
-    match "feed.xml" $ do
-      route idRoute
-      create "feed.xml" $ 
-        constA mempty >>> requireAllA "posts/*" renderXmlFeed        
-
+    match "feed.xml" $ route idRoute
+    create "feed.xml" $ 
+      requireAll_ "posts/*"
+        >>> mapCompiler (arr $ changeField "title" stripTags)
+        >>> renderRss feedConfig
+    
     -- Read templates
     match "templates/*" $ compile templateCompiler
     
@@ -73,6 +75,16 @@ main = hakyll $ do
       compile copyFileCompiler
 
         
+postsForTags :: [Page String] -> [String] -> [Page String]
+postsForTags pages tags = 
+  let tagSet  = (tagsMap . readTags) pages 
+      pagesIn = fromMaybe [] . (flip lookup) tagSet  in
+    tags >>= pagesIn
+    
+postsToField :: String -> Compiler [Page String] (Page String)
+postsToField field = setFieldA field $ pageListCompiler recentFirst "templates/postitem.html"
+  
+
 addPostList :: Compiler (Page String, [Page String]) (Page String)
 addPostList = setFieldA "posts" $
               pageListCompiler recentFirst "templates/postitem.html"
@@ -85,15 +97,6 @@ makeEnvironment = arr $ updateFieldInto "title" "alttitle" stripTags
 updateFieldInto :: String -> String -> (String -> String) -> Page a -> Page a
 updateFieldInto key newKey updater = 
   changeField newKey updater . copyField key newKey
-  
-renderXmlFeed :: Compiler (Page String, [Page String]) (Page String)
-renderXmlFeed = second cleanTitles 
-            >>> second (arr $ take 10 . recentFirst)
-            >>> setFieldA result (renderRss feedConfig) 
-            >>> (arr $ copyBodyFromField result)
-              where cleanTitles = arr $ fmap (changeField "title" stripTags)
-                    result      = "result"
-                
                  
 setTitle :: String -> Compiler (Page a) (Page a)
 setTitle t = arr $ (setField "title" t)
