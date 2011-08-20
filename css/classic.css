@@ -59,7 +59,6 @@ h2 {
    position: absolute;
    left: 35%;
    top: 0;
-   
 }
 
 footer {
@@ -93,6 +92,10 @@ section.post blockquote {
 }
 
 section.post > div.content > p {
+   margin-top: 1em;
+}
+
+section.post > div.content h2 {
    margin-top: 1em;
 }
 
