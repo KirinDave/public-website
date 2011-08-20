@@ -132,7 +132,7 @@ a world where parallelism and meta-programming are important.
 For example, consider a simplified, local version of the famous Google MapReduce paradigm. Describing this paradigm succinctly in a functional way with well-known functional patterns is surprisingly brief:
 
       mapReducer data partitioner mapper reducer =
-        let partitions = partitioniner data in
+        let partitions = partitioner data in
           reduce reducer (map mapper partitions)
 
 Changing this to support parallelism and distributed concurrency is
