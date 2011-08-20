@@ -1,10 +1,10 @@
-–-
-title: Functional Programming Is Hard, That's Why It's Good
-date: 08-17-2011
+---
+title: Functional Programming Is Hard,<br>That's Why It's Good
+date: 08-19-2011
 tags: programming, functional, haskell, scala, ocaml, lisp, prescriptive
 author: Dave Fayram
 description: The reason FP is hard is because it requires people to learn new fundamentals of programming.
-–-
+---
 
 Odds are, you don't use a functional programming language every
 day. You probably aren't getting paid to write code in Scala, Haskell,
@@ -33,7 +33,7 @@ situation, and it's a strong indicator that learning one of these
 languages will make you more productive and competent at writing
 software.
 
-### Your First Time Wasn't Gentle
+## Your First Time Wasn't Gentle
 
 I learned to code when I was 7, fiddling on my grandfather's computer
 on long, boring suburban summers. I learned BASIC, made a ball dance
@@ -61,14 +61,14 @@ better programmer by helping you think more symbolically. Even if you
 work in a language that doesn't offer you pointers, pointer-like
 structures and concepts abound in the wild.
 
-### Novelty
+## Novelty
 
 Once you learn a few languages, they all start to look the
 same. Someone who knows Python probably won't have too many problems
 learning Ruby, someone who knows Java has a leg up on learning
 C#. Sure, there are hangups. A Rubyist learning Python might have a
 few surprises learning for comprehensions, and the Java user might have
-some problems wrapping their heads around C# delegates. Still, if you
+some problems wrapping their heads around C# [delegates](http://msdn.microsoft.com/en-us/library/ms173171(v=vs.80).aspx). Still, if you
 squint, they all sort of look like one another. And I can assure you,
 if you don't know this yourself, that once you learn A Lisp you start
 to see the similarities in all the variants of Lisp.
@@ -90,7 +90,7 @@ back when we were first setting out to learn programming, these big
 concepts can be frustratingly illusive and vague until you've worked
 (and failed) with them.
 
-### Take Your Medicine, Find Your Pharmacist
+## Take Your Medicine, Find Your Pharmacist
 
 Despite this downside, I submit that learning these functional
 languages is good for you, professionally. I suspect some readers
@@ -118,7 +118,7 @@ never stray towards any new technologies (or only very familiar
 ones). In an industry that changes as rapidly as software engineering
 does, I think it's not a realistic value judgment.
 
-### Saying is Believing
+## Saying is Believing
 
 The most obvious benefit from learning a functional language is that
 you will learn the pattern language for basic functional
@@ -184,14 +184,48 @@ concepts. Another great example is how Scala could take the [already great Java 
 And so, I encourage everyone who wants to be a better programmer:
 consider learning a functional language. Haskell and OCaml are both
 great choices, and F# and Erlang are pretty good as well. It won't be
-easy, but that is probably a good sign. There is a danger of becoming
-over-invested in FP because of the time you put into it; beware this
-trap. But on the other side, you emerge with more core concepts and
+easy, but that is probably a good sign. Try and identify the difficult
+concepts you encounter and see if other people are leveraging
+them; frequently you can break through a mental roadblock by finding
+out what the intent of an unfamiliar abstraction really is.
+
+While you're learning, do be careful not to take it _too_ seriously.
+Like anything that requires time and effort, there is a danger of
+becoming over-invested in FP. Falling into this cognitive trap will
+ruin your investment. It's easy to forget how many models of
+computation there are out there, and even easier to forget how much
+beautiful software has been written with any of them.
+
+It's a narrow path to walk down, but on the other side, you emerge with more core concepts and
 models to leverage in your everyday programming. You will almost
 certainly become more comfortable with denser code, and will certainly
-gain new insights into meta-programming with functions.
+gain new insights into how to be a better software engineer.
+
+## Addendum
+
+A few of the nice people who proofread this essay asked me the same
+question once they were done: "This sounds great, Dave, but which
+language should I learn?" This is, of course, the toughest question
+they could ask me.
+
+I think if you're already a competent programmer then there isn't a
+"right" answer other than: "Whichever one meets your needs." If you
+need to work on the JVM, pick Scala or Clojure. If you want to write
+big distributed software systems quickly, pick Erlang. If you want
+amazing general workhorse languages with terrific compilers, pick Haskell or
+OCaml. If you want a prototyping medium with more potential than Ruby
+or Python, go for Scheme.
+
+Remember, the name of the game here is practical skills _and_
+self-improvement. If you can spare the time, try stepping out of your
+comfort zone and challenging yourself.
 
 Since I already knew Lisp and Erlang and have done professional work
 with OCaml, I decided to tackle Haskell, which is a whole other world
 unto itself. The only way I found that language penetrable was with
-the helpful guides of [Learn You A Haskell](http://learnyouahaskell.com/) and [Real World Haskell](http://book.realworldhaskell.org/). These books are well-written, helpful, and freely available online. Should you choose to try your hand at Haskell, these books can be your pharmacist.
+the helpful guides of
+[Learn You A Haskell](http://learnyouahaskell.com/) and
+[Real World Haskell](http://book.realworldhaskell.org/). These books
+are well-written, helpful, and freely available online. Should you
+choose to try your hand at Haskell, these books can be your
+road map.
