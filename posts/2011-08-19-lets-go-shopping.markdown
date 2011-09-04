@@ -24,8 +24,8 @@ which makes the case that:
 A common thread among people proselytizing functional programming is
 that learning this new, functional language is "good for you";
 almost like someone prescribing 30m in the gym a day
-will "make you fit." Haskell, Ocaml, and Scala are different from Lisp
-in that hey have a certain notoriety for being very hard to
+will "make you fit," but it also implies difficulty and dedication. Haskell, Ocaml, and Scala are different from Lisp
+in that they have a certain notoriety for being very hard to
 learn. Polite people call this "being broad & deep". Less polite
 people call it "mental masturbation" or "academic wankery" or just
 plain "unnecessary." I submit that this difficulty is a familiar

@@ -1,17 +1,18 @@
 body {
-   font-family: serif;
    margin: 0% 10% 0% 10%;
+   font-size: 14pt;
+   font-family: serif;
 }
 
 header {
    border-bottom: 2px double grey;
 }
 
-header h1.toplevel  { 
+header h1.toplevel  {
  font-family: 'Goudy Bookletter 1911', serif;
  font-size: 24pt;
  font-weight: bold;
- text-align: center;   
+ text-align: center;
 }
 
 header h1.toplevel > span {
@@ -50,14 +51,16 @@ h2 {
    width: 33%
 }
 
-.about { 
+.about {
   position: relative;
+  margin-bottom: 2em;
 }
 
 .about > div.content {
    margin: 0.5em;
    position: absolute;
    left: 35%;
+   font-size: 12pt;
    top: 0;
 }
 

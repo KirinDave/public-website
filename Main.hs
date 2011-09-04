@@ -28,7 +28,7 @@ main = hakyll $ do
           >>> relativizeUrlsCompiler
 
     -- Render posts list
-    match "posts.html" $ do 
+    match "posts.html" $ do
       route idRoute
       create "posts.html" $ constA mempty
         >>> setTitle "All posts"
@@ -51,39 +51,36 @@ main = hakyll $ do
 
     -- Feed
     match "feed.xml" $ route idRoute
-    create "feed.xml" $ 
+    create "feed.xml" $
       requireAll_ "posts/*"
         >>> mapCompiler (arr $ changeField "title" stripTags)
         >>> renderRss feedConfig
-    
+
     -- Read templates
     match "templates/*" $ compile templateCompiler
-    
+
     -- Render and compress css
     match "css/*" $ do
       route   idRoute
       compile compressCssCompiler
-    
+
     -- Stage media
     match "media/*" $ do
       route   idRoute
       compile copyFileCompiler
-    
+
     -- Stage images, make sure to truncate from pretty names.
     match "images/*" $ do
       route $ gsubRoute "images/" (const "img/")
       compile copyFileCompiler
 
-        
+
 postsForTags :: [Page String] -> [String] -> [Page String]
-postsForTags pages tags = 
-  let tagSet  = (tagsMap . readTags) pages 
+postsForTags pages tags =
+  let tagSet  = (tagsMap . readTags) pages
       pagesIn = fromMaybe [] . (flip lookup) tagSet  in
     tags >>= pagesIn
-    
-postsToField :: String -> Compiler [Page String] (Page String)
-postsToField field = setFieldA field $ pageListCompiler recentFirst "templates/postitem.html"
-  
+
 
 addPostList :: Compiler (Page String, [Page String]) (Page String)
 addPostList = setFieldA "posts" $
@@ -91,13 +88,12 @@ addPostList = setFieldA "posts" $
 
 -- This is for stuff my blog specifically expects.
 makeEnvironment :: Compiler (Page String) (Page String)
-makeEnvironment = arr $ updateFieldInto "title" "alttitle" stripTags 
+makeEnvironment = arr $ updateFieldInto "title" "alttitle" stripTags
 
 -- Utilities that really would be useful in the standard lib:
 updateFieldInto :: String -> String -> (String -> String) -> Page a -> Page a
-updateFieldInto key newKey updater = 
+updateFieldInto key newKey updater =
   changeField newKey updater . copyField key newKey
-                 
+
 setTitle :: String -> Compiler (Page a) (Page a)
 setTitle t = arr $ (setField "title" t)
-
