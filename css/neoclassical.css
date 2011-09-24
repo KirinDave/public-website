@@ -8,7 +8,7 @@ header {
 
 header h1.toplevel  {
  font-family: "IM Fell Great Primer SC", serif;
- font-size: 24pt;
+ font-size: 28pt;
  font-weight: bold;
  text-align: center;
  font-variant: small-caps;
@@ -16,7 +16,7 @@ header h1.toplevel  {
 }
 
 header h1.toplevel > span {
-   font-size: 18pt;
+   font-size: 14pt;
    font-variant: normal;
 }
 
@@ -113,4 +113,8 @@ a:visited {
 a:hover {
    text-decoration: underline;
    color: #22AABB;
+}
+
+section.post h2 {
+   font-size: 14pt;
 }
