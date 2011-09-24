@@ -45,6 +45,7 @@ main = hakyll $ do
         >>> setTitle topTitle
         >>> makeEnvironment
         >>> requireAllA "posts/*" (second (arr $ take 3 . recentFirst) >>> addPostList)
+        >>> requireAllA "posts/*" procureProgrammingPosts
         >>> applyTemplateCompiler "templates/index.html"
         >>> applyTemplateCompiler "templates/toplevel.html"
         >>> relativizeUrlsCompiler
@@ -75,16 +76,26 @@ main = hakyll $ do
       compile copyFileCompiler
 
 
-postsForTags :: [Page String] -> [String] -> [Page String]
-postsForTags pages tags =
+--
+-- -- Stuff for showing recent topic posts.
+--
+
+postsForTags :: [String] -> [Page String] -> [Page String]
+postsForTags tags pages =
   let tagSet  = (tagsMap . readTags) pages
       pagesIn = fromMaybe [] . (flip lookup) tagSet  in
     tags >>= pagesIn
 
+postsForTagsA :: [String] -> Compiler (Page String, [Page String]) (Page String, [Page String])
+postsForTagsA tags = second (arr $ recentFirst . postsForTags tags)
+
 
 addPostList :: Compiler (Page String, [Page String]) (Page String)
-addPostList = setFieldA "posts" $
-              pageListCompiler recentFirst "templates/postitem.html"
+addPostList = renderPageListInto "posts" "templates/postitem.html"
+
+procureProgrammingPosts = postsForTagsA ["programming"] >>>
+                          second (arr $ take 5) >>>
+                          renderPageListInto "engineeringPosts" "templates/postitem.html"
 
 -- This is for stuff my blog specifically expects.
 makeEnvironment :: Compiler (Page String) (Page String)
@@ -97,3 +108,7 @@ updateFieldInto key newKey updater =
 
 setTitle :: String -> Compiler (Page a) (Page a)
 setTitle t = arr $ (setField "title" t)
+
+renderPageListInto :: String -> Identifier Template -> Compiler (Page String, [Page String]) (Page String)
+renderPageListInto fieldName listTemplate = setFieldA fieldName $
+                                              pageListCompiler recentFirst listTemplate
