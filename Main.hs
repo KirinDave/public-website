@@ -9,7 +9,7 @@ import Data.Maybe (fromMaybe)
 
 import Hakyll
 
-topTitle = "<span>Case Study:</span><br> An Opinionated Man"
+topTitle = "<span>CASE STUDY:</span><br> An Opinionated Man"
 feedConfig = FeedConfiguration { feedTitle       = "dave's blog"
                                , feedDescription = "Unified topic feed for dave's blog."
                                , feedAuthorName  = "Dave Fayram"
