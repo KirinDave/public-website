@@ -6,6 +6,7 @@ import Control.Category (id)
 import Control.Arrow ((>>>), (***), arr, second)
 import Data.Monoid (mempty, mconcat)
 import Data.Maybe (fromMaybe)
+import Control.Monad (forM)
 
 import Hakyll
 
@@ -73,6 +74,12 @@ main = hakyll $ do
     match "media/*" $ do
       route   idRoute
       compile copyFileCompiler
+
+    -- Stage js
+    forM ["js/*", "js/libs/*"] $ \pattern ->
+      match pattern $ do
+        route idRoute
+        compile copyFileCompiler
 
     -- Stage images, make sure to truncate from pretty names.
     match "images/*" $ do
