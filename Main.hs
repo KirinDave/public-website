@@ -65,6 +65,10 @@ main = hakyll $ do
       route   idRoute
       compile compressCssCompiler
 
+    match "css/columnal/*" $ do
+      route idRoute
+      compile compressCssCompiler
+
     -- Stage media
     match "media/*" $ do
       route   idRoute

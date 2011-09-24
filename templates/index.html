@@ -1,41 +1,57 @@
 
 <section class="about">
-  <img class="portrait" src="img/casual.png">
-  <div class="content">
-    <p>I'm a software engineer working out of San Francisco, CA. Historically I've 
-    tried to use Tumblr to contain my long-form writing, but I've learned that format
-    is not well suited to the length or audience I court. So, I've erected this
-    structure as a place to throw away larger bits of text.</p>
-    <p>
-    You might also like to see my 
-    <a href="http://plus.google.com/117830126779727400170">Google+ Profile</a> and 
-    <a href="http://twitter.com/kirindave">Twitter stream</a>,
-    but I'd recommend against them. My <a href="#productions">other productions</a> are
-    probably much more suited to casual observation.</p>
+  <div class="row">
+    <div class="col_1">&nbsp;</div>
+    <img class="portrait col_3" src="img/casual.png">
+    <div class="content col_6">
+      <p>I'm a software engineer working out of San Francisco, CA. Historically I've 
+        tried to use Tumblr to contain my long-form writing, but I've learned that format
+        is not well suited to the length or audience I court. So, I've erected this
+        structure as a place to throw away larger bits of text.</p>
+      <p> You might also like to see my 
+        <a href="http://plus.google.com/117830126779727400170">Google+ Profile</a> and 
+        <a href="http://twitter.com/kirindave">Twitter stream</a>,
+        but I'd recommend against them. My <a href="#productions">other productions</a> are
+        probably much more suited to casual observation.</p>
+    </div>
+    <div class="col_1 omega">&nbsp;</div>
   </div>
 </section>
 
 
-<section id="posts" style="clear: both">
-  <h2>Recent posts</h2>
-  <ul>
-    $posts$
-  </ul>
+<section id="posts">
+  <div class="row">
+    <div class="col_1">&nbsp;</div>
+    <div class="col_5">
+      <h2>Recent posts</h2>
+      <ul>
+        $posts$
+      </ul>
+    </div>
+    <div class="col_5">
+      <h2>Programming Posts</h2>
+      <ul>
+        $engineeringPosts$
+      </ul>
+    </div>
 
-
-  <h2>Programming Posts</h2>
-  <ul>
-    $engineeringPosts$
-  </ul>
-
-  <a href="/posts.html">All posts&hellip;</a>
+    <div class="col_1 omega">&nbsp;</div>
+  </div>
+  <div class="row">
+    <div class="col_1">&nbsp;</div>
+    <div class="col_11 omega">
+      <a href="/posts.html">All posts&hellip;</a>
+    </div>
+  </div>
 </section>
 
 
-<section id="productions">
+<section id="productions" class="row">
+  <div class="col_1">&nbsp;</div>
+  <div class="col_10">
   <h2>Other Productions</h2>
   <p>The following may be of interest to you: <a name="productions"></a>
-    <ol>
+    <ul>
       <li> I am an amateur photographer. <a href="http://www.flickr.com/photos/davefayram/">This is my flickr.</a>
       <li> I write a lot of code, some of it open source. <a href="http://github.com/KirinDave">This is my github.</a>
       <li> My wife and I held a big wedding ceremony in 2010. <a href="http://daveandsu.com">This is that story.</a>
@@ -44,4 +60,6 @@
       <li> I've talked about coffee, code and process on Quora. <a href="http://www.quora.com/dave-fayram">Some of that is available here.</a>
     </ol>
   </p>
+  </div>
+  <div class="col_1 omega">&nbsp;</div>
 </section>
