@@ -1,0 +1,27 @@
+
+
+.win.chrome header h1.toplevel {
+   font-family: "Georgia", serif;
+}
+
+.win.chrome nav > ul li {
+   font-family: "Georgia", serif;
+}
+
+.win.chrome div.content {
+   font-family: "Times New Roman", serif;
+}
+
+.win.chrome div.content ul {
+   font-family: "Times New Roman", serif;
+   color: red;
+}
+
+.win.chrome h2 {
+   font-family: "Times New Roman", serif;
+   font-weight: bold;
+}
+
+.win.chrome p {
+   font-family: "Times New Roman", serif;
+}
