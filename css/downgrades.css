@@ -8,6 +8,10 @@
    font-family: "Georgia", serif;
 }
 
+.win.chrome ul > li {
+   font-family: "Times New Roman", serif;
+}
+
 .win.chrome div.content {
    font-family: "Times New Roman", serif;
 }
