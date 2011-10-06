@@ -202,7 +202,7 @@ Ready? It's not long,
 ~~~~~~~~{.ruby}
 class Array
   def mbind(&k)           # We break the Maybe monad here. Sorry, Maybe!
-    self.map {|v| k.call(v)}.flatten
+    self.map {|v| k.call(v)}.flatten(1)
   end
 end
 ~~~~~~~~
@@ -299,6 +299,7 @@ we can talk.
 And almost immediately, I got some feedback. Here are some corrections
 that I think are interesting to mention:
 
-1. Ruby's nil-punning-to-simulate-Maybe isn't a perfect copy of the
+1. Shachaf@#haskell points out that Ruby's nil-punning-to-simulate-Maybe isn't a perfect copy of the
 Maybe monad. You cannot express nested maybe types, which a real Maybe
 type would let you do. As an example, consider "Just Nothing".
+2. @alanmalloy reminded me that flatten is too aggressive. What I wanted was #flatten(1). Thanks!
