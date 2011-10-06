@@ -131,9 +131,11 @@ a world where parallelism and meta-programming are important.
 
 For example, consider a simplified, local version of the famous Google MapReduce paradigm. Describing this paradigm succinctly in a functional way with well-known functional patterns is surprisingly brief:
 
-      mapReducer data partitioner mapper reducer =
-        let partitions = partitioner data in
-          reduce reducer (map mapper partitions)
+~~~~~{.haskell}
+mapReducer dataset partitioner mapper reducer =
+  let partitions = partitioner dataset in
+    reduce reducer (map mapper partitions)
+~~~~~
 
 Changing this to support parallelism and distributed concurrency is
 trivial (for local parallelism, many libraries support "pmap" and
@@ -152,26 +154,29 @@ reducer are. If you're curious, try laying out a minimal spec for "OO"
 MapReduce in your ideal OO language. I found it to be quite
 verbose. With a Java-like language, one might say:
 
-        interface Mapper<A,B> {
-          B map(A input);
-        }
+~~~~~~~{.java}
+ interface Mapper<A,B> {
+   B map(A input);
+ }
 
-        interface Reducer<X,Y> {
-          Y reduce(X a, X b);
-        }
+ interface Reducer<X,Y> {
+   Y reduce(X a, X b);
+ }
 
-        abstract class MapReduce<X,Y,Z> {
-          private Mapper<X,Y> mapper;
-          private Reducer<Y,Z> reducer;
+ abstract class MapReduce<X,Y,Z> {
+   private Mapper<X,Y> mapper;
+   private Reducer<Y,Z> reducer;
 
-          public MapReduce(Mapper<X,Y> map, Reducer<Y,Z> reduce) {
-            // ...
-          }
+   public MapReduce(Mapper<X,Y> map, Reducer<Y,Z> reduce) {
+     // ...
+   }
 
-          public run(SeqenceType<X> data) {
-            // ...
-          }
-        }
+   public run(SeqenceType<X> data) {
+     // ...
+   }
+ }
+~~~~~~~
+
 
 Without even going through the loop logic, our inability to access the
 common nouns and verbs of the functional paradigm makes the MapReduce
