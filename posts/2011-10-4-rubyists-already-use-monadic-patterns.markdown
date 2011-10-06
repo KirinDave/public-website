@@ -295,3 +295,10 @@ happy to add errata or addenda here, if you want to reach me on
 Email, FreeNode (as KirinDave), [Twitter](http://twitter.com/kirindave), or
 [Google+](https://plus.google.com/u/0/117830126779727400170) and
 we can talk.
+
+And almost immediately, I got some feedback. Here are some corrections
+that I think are interesting to mention:
+
+1. Ruby's nil-punning-to-simulate-Maybe isn't a perfect copy of the
+Maybe monad. You cannot express nested maybe types, which a real Maybe
+type would let you do. As an example, consider "Just Nothing".
