@@ -80,8 +80,6 @@ connection from it *if we got a host name*. Finally, we setup a
 decryption wrapper around the stream. If any one step in the process
 fails, then all the subsequent steps are skipped.
 
-Sound familiar?
-
 An even more familiar version of this pattern involves ignoring the
 return value:
 
