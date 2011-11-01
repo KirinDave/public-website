@@ -114,3 +114,7 @@ a:hover {
 body {
    font-family: "Sorts Mill Goudy";
 }
+
+code {
+ font-family: fixed;
+}
