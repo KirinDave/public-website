@@ -7,6 +7,9 @@ Main: Main.hs
 _site: Main css/*.css js/*.js posts/*
 	./Main rebuild
 
+sync: _site
+	s3cmd sync _site/ s3://dave.fayr.am/
+
 clean: 
 	find . -name '*~' | xargs rm
 	find . -name '#*#' | xargs rm

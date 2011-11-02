@@ -301,3 +301,4 @@ that I think are interesting to mention:
 Maybe monad. You cannot express nested maybe types, which a real Maybe
 type would let you do. As an example, consider "Just Nothing".
 2. @alanmalloy reminded me that flatten is too aggressive. What I wanted was #flatten(1). Thanks!
+3. The entire ruby community seems to want to argue about what ||= really means. For pedanic completenes, by expansion `(x ||= y # -> x = x || y)` is only correct for locals, where it is the closest approximation to what actually happens. Ruby has a whole separate set of rules when you call it on an object, and in that case it is closer to `( x[:a] ||= y # x[:a] || x[:a] = y )`. Please keep this in mind, but in practice it seldom makes a difference to the end result of your code.
