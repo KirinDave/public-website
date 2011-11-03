@@ -23,7 +23,7 @@ keywords so that some programmers might "feel safer".
 </blockquote>
 
 This echos
-[a tweet by DHH, another strong opponent of static typing](http://twitter.com/#!/dhh/status/123773621771583488),
+[a tweet by @DHH, another strong opponent of static typing](http://twitter.com/#!/dhh/status/123773621771583488),
 which says:
 
 <blockquote>
@@ -45,7 +45,7 @@ me reason about my code. When I refactor, the types are likewise there
 to help (something that only a battery of cleverly written unit tests
 can give you in dynamic land).
 
-## Modern Type Inference, With & Without Types
+## Modern Type Inference, With & Without Explicitly Written Types
 
 As an example, I've excerpted a bit of code from a library I use to
 manage my chef 0.9 environment. I have to switch between several
