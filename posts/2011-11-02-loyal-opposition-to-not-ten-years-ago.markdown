@@ -50,7 +50,7 @@ can give you in dynamic land).
 As an example, I've excerpted a bit of code from a library I use to
 manage my chef 0.9 environment. I have to switch between several
 configurations and amazon keys throughout my work day. This code shows
-a nice string ("ubuntu@production" or "none") explaining what my knife.rb says about my
+a nice string ("ubuntu@production" or "none") explaining what my knife.rb says about
 which chef environment I am currently pointed at:
 
 ~~~~~~{.haskell}
