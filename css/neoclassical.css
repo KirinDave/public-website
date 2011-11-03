@@ -70,6 +70,11 @@ p {
    font-family: "Sorts Mill Goudy";
 }
 
+blockquote {
+  font-family: "Sorts Mill Goudy";
+  color: rgb(100,100,100);
+  font-size: 11pt;
+}
 
 p + p {
    margin-top: 1em;
