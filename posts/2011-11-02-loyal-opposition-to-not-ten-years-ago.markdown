@@ -132,7 +132,7 @@ ally instead of your taskmaster. Even the venerable C++ is [adding limited type 
 So let's stop spreading the misconception that static typing is all
 about "keywords" and "const" circa 1999. Sure, some statically typed
 languages use these constructs. But, that's not really related to
-static typing so much as their heritage and  Let's stop straw-manning a very promising
+static typing so much as their heritage. Let's stop straw-manning a very promising
 branch of the programming language family that has come a long way
 over the past 20 years.
 
