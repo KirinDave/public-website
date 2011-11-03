@@ -100,7 +100,7 @@ about what we want to write...
 lineWith       :: String -> [String] -> Maybe String
 fileLines      :: FilePath -> IO [String]
 knifeLines     :: IO [String]
-getQuotedValue :: String -> String -> String
+getQuotedValue :: String -> String
 ~~~~~~
 
 ... and then start writing from there. This is analogous to a
@@ -137,5 +137,4 @@ branch of the programming language family that has come a long way
 over the past 20 years.
 
 And of course, I'd like to thank the folks who helped suggest how to
-clarify my code on Freenode. In particular: shachaf, luite, c_wraith,
-and Nimatek.
+clarify my code on Freenode. In particular: shachaf, luite, c_wraith, Nimatek and grey_wolf.
