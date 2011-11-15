@@ -105,9 +105,9 @@ getQuotedValue :: String -> String
 
 ... and then start writing from there. This is analogous to a
 lightweight test-first process. We can lay out these type annotations
-and then sketch the code in underneath them. Like in the dynamic
+and then sketch the code in underneath them. Like in the dynamicly-typed
 programming world, it's fairly easy not to make the mistake of passing
-the wrong item to a function. Unlike the dynamic programming world, we
+the wrong item to a function. Unlike the dynamicly-typed programming world, we
 have the compiler watching out back and making sure we don't get
 distracted and commit that subtle error.
 
