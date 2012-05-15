@@ -75,6 +75,18 @@ p + p {
    margin-top: 1em;
 }
 
+blockquote {
+   color: rgb(100,100,100);
+   bottom-margin: 1.75em;
+   line-height: 1.3em;
+   font-size: 12pt;
+   font-family: "Sorts Mill Goudy";
+}
+
+blockquote > p {
+  bottom-margin: 0.5em;
+}
+
 
 
 .attributions {
