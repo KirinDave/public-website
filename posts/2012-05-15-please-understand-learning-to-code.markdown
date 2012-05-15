@@ -3,7 +3,7 @@ title: Please Understand Learning to Code
 date: 05-15-2012
 tags: programming, learning, philosophy, necessity
 author: Dave Fayram
-description: On Actually Learning To Code & It's Not All That Simpke
+description: On Actually Learning To Code & It's Not All That Simple
 ---
 
 ## Another Day, Another Argument
