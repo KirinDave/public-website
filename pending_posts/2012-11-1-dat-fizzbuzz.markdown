@@ -1,42 +1,40 @@
 ---
-title: FizzBuzz, Out Of The Functional Jungle
+title: FizzBuzz, A Deep Navel to Gaze Into
 date: 10-1-2012
 tags: programming, haskell, fizzbuzz, mastery
 author: Dave Fayram
-description: Finding interesting things to say even about Fizzbuzz.
+description: Finding interesting things to say even about FizzBuzz.
 ---
 
-## Fizzbuzz, Interviews, And Overthinking.
+## Fizzbuzz, Interviews, And Over-thinking.
 
 There is sort of a running meme in programming culture that
 [programmers cannot "program"](http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html),
 meaning that lots of people who are in the software industry making a
 living as software engineers actually are not very proficient at
 programing outside of very narrow specialties. So you hear a lot about
-dreadful intervew processes that companies resort to to try and find
+dreadful interview processes that companies resort to to try and find
 the best programmers. And generally, there isn't much thought given to
 these problems, which is a shame sometimes.
 
 In Jeff's article (referencing
-[Reginald's advice about not overthinking Fizzbuzz](http://weblog.raganwald.com/2007/01/dont-overthink-fizzbuzz.html)),
+[Reginald's advice about not over-thinking FizzBuzz](http://weblog.raganwald.com/2007/01/dont-overthink-fizzbuzz.html)),
 we're basically told that Fizzbuzz is just a simple thing and even if
 we can improve upon the pattern, we shouldn't. Its purpose is to weed
 out people who don't have basic proficiency, and that's it. It's just effing
-FizzBuzz, after all. Just a few days before I wrote this, I found a clever fellow named
-c_wraith on Freenode#haskell who had a really insightful
-implementation I'd like to share with you. It reminded me how valuable it is to
-occasionally sit back and remind ourselves that even the simplest
-specs can be koans that offer much more than they appear to.
+FizzBuzz, after all. 
 
+If you really boil it down, FizzBuzz is something of an irritating program. I'm not sure how much the [author](http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/) of the problem really thought about FizzBuzz, but it turns out it's difficult to express well with the tools available to most imperative programming languages, but easy to express using common functional patterns available in Haskell and ML. Just a few days before I wrote this, I found a clever fellow named c_wraith on Freenode#haskell who had a really insightful
+implementation leveraging an abstraction called "monoids" that I'd like to share with you.
 
 
 ## Fizz Fi Fo Buzz
 
-Let's review Fizzbuzz really quick. It is originally defined as:
+Let's review FizzBuzz really quick. It is originally defined as:
 
 > Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”.
 
-So let's start with the classic implementation of Fizzbuzz:
+So let's start with the classic implementation of FizzBuzz:
 
 ~~~~~~{.c}
 #include <stdio.h>
@@ -108,16 +106,16 @@ for i in xrange(1, 101):
 
 And here we pant, wipe the metaphorical sweat from our brows, and say
 "Wow, that was awful. That was terrible! I was doing math in my head
-and I'm confused what order I should be considering my conditional in
-and..." In mid-thought, the client pops his head in and says, "Oh, and
+and I'm confused what order I should be using for my conditional clauses
+and did I forget an elif and..." In mid-thought, the client pops his head in and says, "Oh, and
 could 11's be labeled with a Boo?"
 
-The problem is that the structure of this solution is stupid. Stupid
+The problem is that the structure of this solution is brittle. It's foolish for us to describe the state machine that FizzBuzz wants at this level! Foolish
 to the point where for anything beyond the most basic uses it's
 unacceptable. Production code (and I say this with a wave of my hand)
-can't behave this way. I've actually used Fizzbuzz in an interview and
+can't behave this way. I've actually used FizzBuzz in an interview and
 had someone give this simple answer, and I keep asking them to add
-more numbers until they show me how to make the code extensible.
+more numbers until they show me how to make the code extensible. Drawing that line where code is "maintainable and extensible" but not "over-engineered"  one of the hardest things a good professional programmer has to do.
 
 FizzBuzzBazz is an even more subtle problem than most developers
 realize at the outset. What trips up lots of novice programmers is
@@ -127,7 +125,7 @@ subtly wrong:
 
 
 ~~~~~~{.c}
-// This version never outputs the "fizzbuzz" case even though it looks
+// This version never outputs the "FizzBuzz" case even though it looks
 // like it does.
 void fizzbuzz0(int i) {
   if (!(i % 3)) {
@@ -146,6 +144,7 @@ void fizzbuzz0(int i) {
 }
 
 // Thanks to aristid for these examples
+
 // this solution goes through all options with independent if
 // statements, but fails to handle the fallback correctly
 void fizzbuzz1(int i) {
@@ -156,7 +155,7 @@ void fizzbuzz1(int i) {
     printf("buzz");
   }
   if (WHAT_CAN_WE_DO) {// What do you do here? You have to know which
-                      // branches you took in the past.
+                       // branches you took in the past.
     printf("%d");
   }
   printf("\n");
@@ -174,8 +173,7 @@ void fizzbuzz2(int i) {
 ~~~~~~
 
 What we need here is a better structure to capture the control
-flow. Just using naive conditionals will explode combinatorically, and
-is error prone.
+flow. Just using naive conditionals will explode in side and seems error-prone.
 
 ## A Better Model
 
@@ -219,9 +217,9 @@ even that unreadable, even if it is a lot slower."
 
 Which is true. And for an interview this is way above and beyond the
 call. *But...* We've spent a lot of time at a very low level of
-abstraction. Fizzbuzz/bazz as formulated really doesn't care how you
+abstraction. FizzBuzz/Bazz as formulated really doesn't care how you
 implement the control flow, it has a set of rule that add up in a way
-reminicent of Pascal's Triangle. This version solves the problem, but
+reminiscent of Pascal's Triangle. This version solves the problem, but
 has a lot of machinery around it to make that happen.
 
 This version is only obvious in its operation to programmers
@@ -237,11 +235,11 @@ function into some sort of crazy lambda-ized "production-ready" piece
 of code--is, "What is the actual logic of FizzBuzz?" It seems like
 we're doing an awful lot of work defining the control flow and not a
 lot of work talking about the the trivial algorithm itself. It's not even
-overthinking a useless problem, FizzBuzz is made up of several common operations:
+over-thinking a useless problem, FizzBuzz is made up of several common operations:
 
 1. Iterate over a group of entities.
 2. Accumulate data about that group.
-3. Provide a sane alterantive if no data is available.
+3. Provide a sane alternative if no data is available.
 4. Produce output that a human can read.
 
 There are elements of FizzBuzz's logic in nearly every program you
@@ -253,9 +251,9 @@ level. Indeed, many software engineers don't even have names or
 definitions for these patterns. It'd be pretty useful to be able to
 name and perhaps even reuse these patterns in other contexts.
 
-## Math To The Resuce
+## Math To The Rescue
 
-It turns out that mathemeticians actually have noticed several of
+It turns out that mathematicians actually have noticed several of
 these patterns before in their own definitions of algorithms, and when
 [Category Theory](http://en.wikipedia.org/wiki/Category_theory) came
 into existence a lot of these patterns got categorized and given very
@@ -344,8 +342,8 @@ this is a monoid above. If it does become a `Nothing`, then our fromMaybe will c
 otherwise false. There are other ways we could have written this code
 (most naturally with a helper function), but monad
 comprehensions are there and they're easy to use. Astute readers will
-also notice we used that syntax to generate our list of fizzbuzz's in
-main. Monad Comprehensions are very flexible because they work with
+also notice we used that syntax to generate our list of FizzBuzz in
+`main`. Monad Comprehensions are very flexible because they work with
 the existing Monad rules, which are a bit out of scope for this post.
 
 The main function is just the same sort of basic "please loop over
@@ -383,7 +381,7 @@ lists, we're staying fairly high up and describing things in terms of
 _when to concatenate_ and _how to fall back on optional values_.
 
 The reason we can do this so naturally is that Haskell has already
-captured logical patterns (monoids and Maybe) that aptly and succintly
+captured logical patterns (monoids and Maybe) that aptly and succinctly
 describe our control flow. These patterns are not anymore complex than
 just a few definitions, but they allow code to function at a much
 higher level. Without these abstractions, we need to build our control flow out of
@@ -427,18 +425,18 @@ main = do
 ~~~~~~~
 
 1. We use the newer `Data.Text` values, and use the `OverloadedString`
-language extention to allow us to naturally create `Text` values instead
+language extension to allow us to naturally create `Text` values instead
 of `String` values when the type inferencer can determine we need to.
 2. We also alter our function to take a default value generator, so we can move the decision how to produce the default out to the caller.
 
 We could even do all sorts of potentially useful things, like instead
 of using a string representation we could use a key-value mapping to
-store the occurences of Fizz, Buzz, and Bazz. A monoid there would
+store the occurrences of Fizz, Buzz, and Bazz. A monoid there would
 even give us a way to combine them across iterations, building a
-counter for occurences. All while using the same original function!
+counter for occurrences. All while using the same original function!
 
 It turns out that the "Monoid View" of this logic is not only more
-clear and succint, but it's also _more general_. It's not just Arrays
+clear and succinct, but it's also _more general_. It's not just Arrays
 and Strings and Integers that form monoids, but also more powerful
 structures like Bloom Filters, Hash Tables, nodes in a neural network,
 a lot of things!
@@ -448,28 +446,29 @@ a lot of things!
 As I get more experience in different fields and disciplines of
 programming, I'm constantly amazed how I've failed to recognize
 patterns other people have caught, named, and implemented. I try my
-best to integrate these into my professinal life, but it can be
+best to integrate these into my professional life, but it can be
 tricky. I had the same kind of revelation years ago when someone
-handed me a copy of (Java Concurrency in
-Practice)[http://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601]
+handed me a copy of [Java Concurrency in Practice](http://www.amazon.com/Java-Concurrency-Practice-Brian-Goetz/dp/0321349601)
 and helped me realize what "good" concurrent code was.
 
 Monoids are an example of something most functionally programmers
 trivially use all the time but you almost never see explicitly called
-out in imperative languages. Which is a shame, becuase it's an
+out in imperative languages. Which is a shame, because it's an
 incredibly powerful perspective from which to consider your logic.
 
-Functional programmers have the advantage and disadvanage of working
+An amazing example of this is what happens when you consider that, in Haskell, _ordering rules for sorting algorithms can form a monoid!_ Why would that be useful? [Concatenating sort functions lets you sort by one function, then another.](http://stackoverflow.com/a/11486672) It almost seems like there is a trick at play; that these patterns are too simple to be so flexible. But that's the weird and wild world that functional programming has diverged into.
+
+Functional programmers have the advantage and disadvantage of working
 at a slightly lower level of abstraction (or perhaps guidance? )
 than most modern OO programmers do; they don't have the implicit structure granted by
-"everything as an object" to lean on (or be constrained by), so it's
+"everything as an object" to lean on (or be constrained by). Perhaps it's
 only natural that functional programming takes control flow
-abstraction more seriously.
+abstraction more seriously. Given that OCaml and Haskell have compilers and runtimes routinely are praised for their impressive (competitive with C++) execution speed and better-than-Java memory performance, it's all the more impressive. They've managed to keep these extremely high-level views of the world intact while keeping efficiency.
 
 I've found myself more than once recognizing where the abstraction of
-a Monoid might be useful becuase then I could start with something
+a monoid might be useful because then I could start with something
 simple and then replace it with something more complex later. It's
-only the "appendy" property of it that I actually care about. Before I
+only the "append-y" property of it that I actually care about. Before I
 started working with Haskell, it only dimly registered with me that
 this *was* a point of abstraction. The power to generalize at this
 axis is not something most programmers today recognize readily, but we
