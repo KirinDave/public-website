@@ -1,6 +1,6 @@
 ---
 title: FizzBuzz, A Deep Navel to Gaze Into
-date: 10-1-2012
+date: 10-4-2012
 tags: programming, haskell, fizzbuzz, mastery
 author: Dave Fayram
 description: Finding interesting things to say even about FizzBuzz.
@@ -19,13 +19,12 @@ these problems, which is a shame sometimes.
 
 In Jeff's article (referencing
 [Reginald's advice about not over-thinking FizzBuzz](http://weblog.raganwald.com/2007/01/dont-overthink-fizzbuzz.html)),
-we're basically told that Fizzbuzz is just a simple thing and even if
-we can improve upon the pattern, we shouldn't. Its purpose is to weed
-out people who don't have basic proficiency, and that's it. It's just effing
-FizzBuzz, after all. 
+we're told that Fizzbuzz is just a simple thing.  Even if
+we can improve upon the pattern, we probably shouldn't. Its purpose is to weed
+out people who don't have basic proficiency, no more. It's just effing
+FizzBuzz, after all. Right?
 
-If you really boil it down, FizzBuzz is something of an irritating program. I'm not sure how much the [author](http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/) of the problem really thought about FizzBuzz, but it turns out it's difficult to express well with the tools available to most imperative programming languages, but easy to express using common functional patterns available in Haskell and ML. Just a few days before I wrote this, I found a clever fellow named c_wraith on Freenode#haskell who had a really insightful
-implementation leveraging an abstraction called "monoids" that I'd like to share with you.
+When you really boil it down to its implementation, FizzBuzz is something of an irritating program. I'm not sure how much the [author](http://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding/) of the problem really thought about FizzBuzz, but it turns out it's difficult to express well with the tools available to most imperative programming languages and easy to express using functional patterns available in Haskell and ML. Just a few days before I wrote this, I found a clever fellow named c_wraith on Freenode#haskell who had a really insightful implementation leveraging an abstraction called "monoids" that I'd like to share with you.
 
 
 ## Fizz Fi Fo Buzz
