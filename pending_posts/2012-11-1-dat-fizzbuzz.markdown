@@ -13,8 +13,8 @@ There is sort of a running meme in programming culture that
 meaning that lots of people who are in the software industry making a
 living as software engineers actually are not very proficient at
 programing outside of very narrow specialties. So you hear a lot about
-dreadful interview processes that companies resort to to try and find
-the best programmers. And generally, there isn't much thought given to
+dreadful interview processes that companies resort to, trying to find
+the best programmers. Generally, there isn't much thought given to
 these problems, which is a shame sometimes.
 
 In Jeff's article (referencing
@@ -79,7 +79,7 @@ Simple right? And simple it should be... *But*. In the so-called "real
 world" of software engineering, you'd almost never actually see code
 like this. Because _in the real world of "production code", code has
 to be extensible and maintainable._ So maybe it's just
-FizzBuzz today, but then a client says, "It'd be amazing if we could
+FizzBuzz today, and then a client says, "It'd be amazing if we could
 point out multiples of 7 with 'Baz' as well!"
 
 Let's change that in Python then...
@@ -115,7 +115,7 @@ to the point where for anything beyond the most basic uses it's
 unacceptable. Production code (and I say this with a wave of my hand)
 can't behave this way. I've actually used FizzBuzz in an interview and
 had someone give this simple answer, and I keep asking them to add
-more numbers until they show me how to make the code extensible. Drawing that line where code is "maintainable and extensible" but not "over-engineered"  one of the hardest things a good professional programmer has to do.
+more numbers until they show me how to make the code extensible. Drawing that line where code is "maintainable and extensible" yet not "over-engineered" is one of the hardest things a good professional programmer has to do.
 
 FizzBuzzBazz is an even more subtle problem than most developers
 realize at the outset. What trips up lots of novice programmers is
@@ -218,9 +218,8 @@ even that unreadable, even if it is a lot slower."
 Which is true. And for an interview this is way above and beyond the
 call. *But...* We've spent a lot of time at a very low level of
 abstraction. FizzBuzz/Bazz as formulated really doesn't care how you
-implement the control flow, it has a set of rule that add up in a way
-reminiscent of Pascal's Triangle. This version solves the problem, but
-has a lot of machinery around it to make that happen.
+implement the control flow, it has a set of rules that add up in a way
+reminiscent of Pascal's Triangle. This version solves the problem by using a lot of machinery around it to make that happen.
 
 This version is only obvious in its operation to programmers
 experienced in both Ruby and general software engineering. It would
@@ -263,7 +262,7 @@ in a limited fashion.
 
 A lot of people dismiss Category Theory as a programmer's utility
 because it's so broad and fairly obscure, and it's difficult to know
-what's useful. But I've been off in the Haskell Jungle, and I'd like
+what's useful. So let me do some of the legwork for you! I've been off in the Haskell Jungle, and I'd like
 to point out two elementary and useful concepts for your
 consideration. Bear with me as I define these. It'll pay off in just a
 few more paragraphs.
@@ -340,8 +339,8 @@ this is a monoid above. If it does become a `Nothing`, then our fromMaybe will c
 3. We use the [`MonadComprehensions`](http://hackage.haskell.org/trac/ghc/wiki/MonadComprehensions) syntactic sugar to define our
 `Maybe String` values. Each `[value | condition]` block returns a `Just value` if the `condition` is true, or
 otherwise false. There are other ways we could have written this code
-(most naturally with a helper function), but monad
-comprehensions are there and they're easy to use. Astute readers will
+(most naturally with a helper function), c_wraith chose monad
+comprehensions because they are there and they're easy to use. Astute readers will
 also notice we used that syntax to generate our list of FizzBuzz in
 `main`. Monad Comprehensions are very flexible because they work with
 the existing Monad rules, which are a bit out of scope for this post.
@@ -374,8 +373,8 @@ main = do
 
 <br />
 
-Pretty, isn't it? But not just pretty, we've managed to define our
-program in a way that is extensible, clear, and performant. We haven't
+Pretty, isn't it? Perhaps. It's not just pretty, we've managed to define our
+program in a way that is extensible, clear, and efficient. We haven't
 been forced to travel down the continuum of abstractions to lambda
 lists, we're staying fairly high up and describing things in terms of
 _when to concatenate_ and _how to fall back on optional values_.
