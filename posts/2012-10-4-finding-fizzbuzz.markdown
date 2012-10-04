@@ -300,7 +300,7 @@ exactly how we define this with a list of possible values for
 
 * `mappend(Just "hello ", Just "world") = Just "hello world"`
 * `mappend(Just "hello ", Nothing)      = Just "hello "`
-* `mappend(Nothing, Just "world")       = Just "hello "`
+* `mappend(Nothing, Just "world")       = Just "world"`
 * `mappend(Nothing, Nothing)            = Nothing`
 
 So we `mappend` the inner value if it is a `Just a`, and if it's a `Nothing` we
