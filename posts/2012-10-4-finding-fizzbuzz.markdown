@@ -274,7 +274,7 @@ associatively without breaking and that have an "identity" value.
 Fancy talk meaning anything that can be sanely added roughly the way integers
 can. Integers form a monoid with (+, 0). You may recall that the
 associative rule says that: `a + (b + c) = (a + b) + c`, and `a + 0 =
-0`. It turns out a lot of things programmers work with on a daily basis
+a`. It turns out a lot of things programmers work with on a daily basis
 actually form monoids, including arrays and strings.
 
 So strings form a monoid where the "addition" is string concatenation
