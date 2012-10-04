@@ -172,7 +172,7 @@ void fizzbuzz2(int i) {
 ~~~~~~
 
 What we need here is a better structure to capture the control
-flow. Just using naive conditionals will explode in side and seems error-prone.
+flow. Just using naive conditionals will explode in size and seems error-prone.
 
 ## A Better Model
 
